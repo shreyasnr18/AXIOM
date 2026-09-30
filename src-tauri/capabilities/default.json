@@ -1,0 +1,45 @@
+{
+  "$schema": "../gen/schemas/desktop-schema.json",
+  "identifier": "default",
+  "description": "Default capability for Axiom desktop application with restricted workspace folder permissions",
+  "windows": ["main"],
+  "permissions": [
+    "core:default",
+    "fs:default",
+    {
+      "identifier": "fs:allow-read-text-file",
+      "allow": [
+        { "path": "$APPDATA/axiom-workspace/**" },
+        { "path": "$RESOURCE/workspace/**" },
+        { "path": "$DOCUMENT/Project AXIOM/workspace/**" },
+        { "path": "./workspace/**" }
+      ]
+    },
+    {
+      "identifier": "fs:allow-write-text-file",
+      "allow": [
+        { "path": "$APPDATA/axiom-workspace/**" },
+        { "path": "$RESOURCE/workspace/**" },
+        { "path": "$DOCUMENT/Project AXIOM/workspace/**" },
+        { "path": "./workspace/**" }
+      ]
+    },
+    {
+      "identifier": "fs:allow-mkdir",
+      "allow": [
+        { "path": "$APPDATA/axiom-workspace/**" },
+        { "path": "./workspace/**" }
+      ]
+    },
+    {
+      "identifier": "fs:allow-exists",
+      "allow": [
+        { "path": "$APPDATA/axiom-workspace/**" },
+        { "path": "./workspace/**" }
+      ]
+    },
+    "dialog:default",
+    "dialog:allow-open",
+    "dialog:allow-save"
+  ]
+}

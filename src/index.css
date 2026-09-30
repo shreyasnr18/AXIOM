@@ -1,0 +1,144 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-app: #08090D;
+    --bg-surface-1: #0D0F15;
+    --bg-surface-2: #12151E;
+    --bg-surface-3: #181C28;
+    --border-subtle: rgba(255, 255, 255, 0.08);
+    --border-hover: rgba(255, 255, 255, 0.16);
+    --brand-purple: #7C3AED;
+    --brand-violet: #8B5CF6;
+    --brand-cyan: #38BDF8;
+    --brand-emerald: #10B981;
+    --brand-rose: #F43F5E;
+    --brand-amber: #F59E0B;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    color-scheme: dark;
+    height: 100%;
+  }
+
+  body {
+    background-color: var(--bg-app);
+    color: #F1F5F9;
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', 'Segoe UI', Roboto, sans-serif;
+    min-height: 100%;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    selection-background-color: rgba(124, 58, 237, 0.4);
+  }
+
+  /* Global invisible scrollbar utility - fully scrollable without visible bar */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+    width: 0 !important;
+    height: 0 !important;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+
+  /* Custom subtle floating scrollbar (if needed) */
+  ::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+    display: none;
+  }
+}
+
+/* Stakent Glass & Card Surfaces */
+.stakent-glass {
+  background: rgba(17, 20, 29, 0.72);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.7), inset 0 1px 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.stakent-glass-interactive {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.stakent-glass-interactive:hover {
+  border-color: rgba(255, 255, 255, 0.16);
+  background: rgba(23, 27, 39, 0.85);
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.85), inset 0 1px 1px 0 rgba(255, 255, 255, 0.14);
+  transform: translateY(-2px);
+}
+
+.stakent-gradient-purple {
+  background: linear-gradient(135deg, #7C3AED 0%, #6366F1 100%);
+  box-shadow: 0 4px 20px rgba(124, 58, 237, 0.35);
+}
+
+.stakent-gradient-purple:hover {
+  background: linear-gradient(135deg, #8B5CF6 0%, #4F46E5 100%);
+  box-shadow: 0 6px 28px rgba(124, 58, 237, 0.55);
+}
+
+.stakent-aurora-card {
+  background: radial-gradient(circle at 80% 20%, rgba(124, 58, 237, 0.25), transparent 60%),
+              radial-gradient(circle at 20% 80%, rgba(99, 102, 241, 0.18), transparent 50%),
+              #10131D;
+  border: 1px solid rgba(139, 92, 246, 0.25);
+  box-shadow: 0 15px 35px -10px rgba(0, 0, 0, 0.7), inset 0 1px 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+.apple-pill-btn {
+  border-radius: 9999px;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.apple-pill-btn:active {
+  transform: scale(0.97);
+}
+
+/* React Flow Stakent Theme Overrides */
+.react-flow__renderer {
+  background-color: #080A0F !important;
+}
+
+.react-flow__minimap {
+  background: rgba(15, 18, 26, 0.85) !important;
+  backdrop-filter: blur(12px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-radius: 16px !important;
+  overflow: hidden !important;
+}
+
+.react-flow__controls {
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-radius: 14px !important;
+  overflow: hidden !important;
+  background: rgba(17, 20, 29, 0.8) !important;
+  backdrop-filter: blur(16px) !important;
+}
+
+.react-flow__controls-button {
+  background: transparent !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06) !important;
+  fill: #94A3B8 !important;
+  transition: all 0.15s ease !important;
+}
+.react-flow__controls-button:hover {
+  background: rgba(255, 255, 255, 0.08) !important;
+  fill: #FFFFFF !important;
+}
+
+.react-flow__handle {
+  width: 10px !important;
+  height: 10px !important;
+  border-radius: 9999px !important;
+  border: 2px solid #080A0F !important;
+  transition: all 0.2s ease !important;
+}
+.react-flow__handle:hover {
+  transform: scale(1.3);
+}
